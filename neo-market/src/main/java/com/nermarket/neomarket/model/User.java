@@ -1,24 +1,25 @@
-package com.nermarket.neomarket.dto;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.Builder;
-import lombok.NoArgsConstructor;
+package com.nermarket.neomarket.model;
+
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.GrantedAuthority;
 
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-@Data // Lombok annotation to generate getter and setter.
-@Builder // Lombok annotation to generate builder pattern.
-@NoArgsConstructor // Lombok annotation to generate default constructor.
-@AllArgsConstructor // Lombok annotation to generate constructor with all parameters.
-@Entity // JPA annotation to map the class to a database table.
-@Table(name = "users") // JPA annotation to specify the table name.
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@Entity
+@Table(name = "users")
 public class User implements UserDetails {
 
     @Id
@@ -44,10 +45,10 @@ public class User implements UserDetails {
     private String profileImageUrl;
 
     @Column(nullable = false)
-    private Boolean enabled = false;
+    private boolean enabled = false;
 
     @Column(nullable = false)
-    private Boolean mfaEnabled = false;
+    private boolean mfaEnabled = false;
 
     @Column(nullable = true)
     private String mfaSecret;
@@ -91,10 +92,5 @@ public class User implements UserDetails {
     @Override
     public boolean isCredentialsNonExpired() {
         return true;
-    }
-
-    @Override
-    public boolean isEnabled() {
-        return enabled;
     }
 }

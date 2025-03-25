@@ -1,7 +1,6 @@
-package com.nermarket.neomarket.dto;
+package com.nermarket.neomarket.model;
 
 import jakarta.persistence.*;
-import jdk.jfr.Category;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

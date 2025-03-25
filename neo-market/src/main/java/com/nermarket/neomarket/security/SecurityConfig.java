@@ -1,6 +1,5 @@
 package com.nermarket.neomarket.security;
 
-import com.nermarket.neomarket.security.CustomUserDetailsService;
 import com.nermarket.neomarket.security.JwtAuthorizationFilter;
 import com.nermarket.neomarket.security.OAuth2UserService;
 

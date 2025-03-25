@@ -1,4 +1,4 @@
-package com.nermarket.neomarket.dto;
+package com.nermarket.neomarket.model;
 
 public enum OrderStatus {
     PENDING,
